@@ -1,7 +1,6 @@
 <template>
 <h1>OpenCode Reaction Timer</h1>
 <button @click="start" :disabled="isPlaying">Play</button>
-<!-- <p v-if="showResult">Reaction: {{score}} ms</p>  -->
 <Block v-if=isPlaying :delay="delay" @end="endGame"/>
 <Results v-if="showResult" :score="score"/>
 </template>
@@ -45,4 +44,22 @@ export default {
   color: #444;
   margin-top: 60px;
 }
+
+button {
+  background: #0faf87;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button[disabled]{
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
 </style>
