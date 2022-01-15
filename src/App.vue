@@ -1,7 +1,7 @@
 <template>
 <h1>OpenCode Reaction Timer</h1>
 <button @click="start">Play</button>
-<Block />
+<Block v-if=isPlaying />
 </template>
 
 <script>
