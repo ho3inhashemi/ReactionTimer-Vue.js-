@@ -1,7 +1,7 @@
 <template>
 <h1>OpenCode Reaction Timer</h1>
 <button @click="start" :disabled="isPlaying">Play</button>
-<p>Reaction: {{score}} ms</p> 
+<p v-if="showResult">Reaction: {{score}} ms</p> 
 <Block v-if=isPlaying :delay="delay" @end="endGame"/>
 </template>
 
@@ -15,6 +15,7 @@ export default {
     return{
       delay: null,
       isPlaying: false,
+      showResult: false, 
       score: null
     }
   },
@@ -26,6 +27,7 @@ export default {
     endGame(reactionTime){
       this.score = reactionTime
       this.isPlaying = false
+      this.showResult = true
     }
   }
 }
