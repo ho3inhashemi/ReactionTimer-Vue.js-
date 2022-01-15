@@ -18,7 +18,7 @@ export default {
      },this.delay)
  } ,
     updated(){
-
+        console.log("component updated")
     }
 }
 </script>
